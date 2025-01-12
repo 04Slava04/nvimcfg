@@ -62,8 +62,8 @@ Customization
 Feel free to modify the init.vim file to add more plugins or tweak the configuration to suit your workflow.
 
 Hotkeys
-Hotkey	Action
-<Ctrl-n>	Toggle NERDTree
-<Ctrl-p>	Search for files with Telescope
-<Ctrl-f>	Live grep with Telescope
-<leader>r	Run the current Python script
+Hotkey Action
+<Ctrl-n> Toggle NERDTree
+<Ctrl-p> Search for files with Telescope
+<Ctrl-f> Live grep with Telescope
+<leader>r Run the current Python script
