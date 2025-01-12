@@ -1,69 +1,75 @@
-Neovim Configuration
-This repository contains my personal configuration for Neovim. It is optimized for Python development, with plugins for syntax highlighting, code linting, formatting, and more.
+# Настройки Vim
 
-Features
-Python Development:
+Этот файл `init.vim` содержит мои персональные настройки для работы с Vim, включая настройки для удобства, управления плагинами и интеграции с Python.
 
-Syntax highlighting with nvim-treesitter.
-Code linting and fixing using ALE (configured with flake8, pylint, and black).
-Language Server Protocol (LSP) integration using nvim-lspconfig with pyright.
-Autocompletion powered by nvim-cmp.
-File Management:
+## Основные настройки
 
-NERDTree for file exploration.
-Powerful search and navigation with Telescope.
-Theme:
+- Включены номера строк
+- Ширина табуляции установлена на 4 пробела
+- Преобразование табуляции в пробелы
+- Умный отступ
+- Включена поддержка мыши
+- Общий буфер обмена с системой
+- Ускоренное обновление для плагинов (300 мс)
+- Постоянная колонка для знаков
+- Отключены swap файлы
+- Кодировка UTF-8
+- Поддержка 24-битных цветов
 
-Gruvbox theme for a pleasing and consistent look.
-Efficiency:
+## Плагины
 
-Auto-save functionality with the vim-auto-save plugin.
-Hotkey for running Python scripts directly from Neovim.
-Smart indentation and clipboard integration.
-Installation
-Prerequisites
-Install Neovim.
-Install vim-plug, the plugin manager.
-Setup
-Clone this repository into your Neovim configuration folder:
+Плагины управляются с помощью [vim-plug](https://github.com/junegunn/vim-plug). Для установки плагинов выполните команду `:PlugInstall`.
 
-bash
-Копировать код
-git clone git@github.com:04Slava04/nvimcfg.git ~/.config/nvim
-Open Neovim and install plugins:
+- **Управление плагинами**
+  - `junegunn/vim-plug`
 
-bash
-Копировать код
-nvim
-:PlugInstall
-Ensure you have Python 3 and necessary packages:
+- **Подсветка синтаксиса и автодополнение для Python**
+  - `dense-analysis/ale` - линтер и фиксер
+  - `neovim/nvim-lspconfig` - конфигурация LSP
+  - `hrsh7th/nvim-cmp` - автодополнение
+  - `hrsh7th/cmp-nvim-lsp` - источник LSP для автодополнения
+  - `hrsh7th/cmp-buffer` - источник для буферов
+  - `hrsh7th/cmp-path` - источник для путей
+  - `nvim-treesitter/nvim-treesitter` - улучшенная подсветка
 
-bash
-Копировать код
-pip install flake8 pylint black
-(Optional) Install pyright globally for LSP:
+- **Поиск и навигация**
+  - `nvim-telescope/telescope.nvim` - мощный поиск
+  - `nvim-lua/plenary.nvim` - библиотека для Telescope
+  - `preservim/nerdtree` - файловый менеджер
 
-bash
-Копировать код
-npm install -g pyright
-Usage
-File Management:
+- **Форматирование кода**
+  - `psf/black` - форматирование Python
 
-Open NERDTree: <Ctrl-n>
-Search for files: <Ctrl-p>
-Live grep: <Ctrl-f>
-Run Python Script:
+- **Тема**
+  - `morhetz/gruvbox` - тема Gruvbox
 
-Press <leader>r to execute the current file in Python.
-Auto-save:
+## Настройки плагинов
 
-The file is saved automatically after a change (enabled by default).
-Customization
-Feel free to modify the init.vim file to add more plugins or tweak the configuration to suit your workflow.
+### ALE (Asynchronous Lint Engine)
 
-Hotkeys
-Hotkey Action
-<Ctrl-n> Toggle NERDTree
-<Ctrl-p> Search for files with Telescope
-<Ctrl-f> Live grep with Telescope
-<leader>r Run the current Python script
+- Линтеры для Python: `flake8` и `pylint`
+- Фиксер для Python: `black`
+- Автофиксация при сохранении
+
+### nvim-lspconfig
+
+- Конфигурация LSP для Python через `pyright`
+
+### nvim-cmp (Completion)
+
+- Источники автодополнения: LSP, буферы, пути
+
+### nvim-treesitter
+
+- Подсветка для Python
+
+## Горячие клавиши
+
+- Запуск Python скрипта: `<leader>r`
+- Поиск файлов: `<C-p>`
+- Поиск текста: `<C-f>`
+- Переключение NERDTree: `<C-n>`
+
+## Тема
+
+- Используется тема Gruvbox с темным фоном
